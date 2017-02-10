@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+	<meta charset="UTF-8" />
+
+	<title>Restoraunt</title>
+
+	<meta name="description" content="Onepage Multipurpose Bootstrap HTML Template">
+
+	<meta name="author" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/theme.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
+		rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<!--wrapper start-->
+	<div class="wrapper" id="wrapper">
+
+		<!--header-->
+		<header>
+			<div class="banner row" id="banner">
+				<div class="parallax text-center" style="background-image: url(img/header.jpg);">
+<div class="parallax-pattern-overlay">
+	<div class="container text-center" style="height:580px;padding-top:170px;">
+<a href="#"><img id="site-title" class=" wow fadeInDown" wow-data-delay="0.0s" wow-data-duration="0.9s" src="img/logo.png" alt="logo"
+	/></a>
+<h2 class="intro wow zoomIn" wow-data-delay="0.4s" wow-data-duration="0.9s">Catering & Special Events</h2>
+</div>
+</div>
+</div>
+</div>
+<div class="menu">
+	<div class="navbar-wrapper">
+		<div class="container">
+			<div class="navwrapper">
+				<div class="navbar navbar-inverse navbar-static-top">
+					<div class="container">
+						<div class="navArea">
+							<div class="navbar-collapse collapse">
+								<ul class="nav navbar-nav">
+									<li class="menuItem active"><a href="#wrapper">Home</a></li>
+									<li class="menuItem"><a href="#aboutus">About Us</a></li>
+									<li class="menuItem"><a href="#specialties">Specialties</a></li>
+									<li class="menuItem"><a href="#gallery">Events Gallery</a></li>>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</header>
+
+<!--about us - chiefs-->
+<section class="aboutus" id="aboutus">
+	<div class="container">
+		<div class="heading text-center">
+			<img class="dividerline" src="img/sep.png" alt="">
+			<h2>About Leroy</h2>
+			<img class="dividerline" src="img/sep.png" alt="">
+			<h3>Order up! Today's special is a great job! Chefs, also known as head cooks, are in charge of kitchens, overseeing the preparation and cooking of food at restaurants, diners, and other operations where somebody can get a bite to eat.</h3>
+		</div>
+
+		<div class="row" id="chief-cont">
+
+
+		</div>
+	</div>
+</section>
+
+<script>
+	$(document).ready(function () {
+		$.ajax({
+			type: "GET",
+			url: "get_chief.php",
+			dataType: "html",
+			success: function (response) {
+				$("#chief-cont").html(response);
+			}
+
+		});
+	});
+</script>
+
+<!--add chief-->
+<div class="heading text-center">
+	<img class="dividerline" src="img/sep.png" alt="">
+	<h2>Add Chief</h2>
+	<img class="dividerline" src="img/sep.png" alt="">
+
+</div>
+<section class="contact" id="contact">
+	<div class="container w960">
+		<div class="row center-block">
+			<div class="done">
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">×</button> New chief has been added. Thank you!
+				</div>
+			</div>
+			<form style="text-align: center;" id="chief-form">
+<div class="row center-block">
+	<input name="name" type="text" class="contact col-md-12" placeholder="Chief Name *">
+</div>
+<div class="row center-block">
+	<br/>
+	<textarea name="description" class="contact col-md-12" placeholder="About Chief *"></textarea>
+</div>
+<div class="row center-block">
+	<label for="fileToUpload">Upload Chief Image</label>
+	<input type="file" class="contact col-md-12" name="image" id="fileToUpload">
+</div>
+<input type="submit" id="add-chief-btn" class="contact submit" value="Add Chief">
+</form>
+</div>
+</div>
+</section>
+
+<script>
+	$("#chief-form").submit(function () {
+		$.ajax({
+			type: "POST",
+			url: "add_chief.php",
+			data: new FormData(this),
+			processData: false,
+			contentType: false,
+			success: function (data) { alert(data); },
+		})
+	});
+</script>
+
+<!--specialties-->
+<section class="specialties" id="specialties">
+	<div class="container">
+		<div class="heading text-center">
+			<img class="dividerline" src="img/sep.png" alt="">
+			<h2>Our Specialties</h2>
+			<img class="dividerline" src="img/sep.png" alt="">
+			<h3>Have you ever felt worried that your party will not raise up to your guest expectations? In design, vertical rhythm is
+				the structure that guides a reader's eye through the content. Good vertical rhythm makes a layout more balanced and beautiful
+				and its content more readable. The time signature in sheet music visually depicts a song's rhythm, while for us, the
+				lines of the baseline grid depict the rhythm of our content and give us guidelines.</h3>
+		</div>
+		<div class="row" id="recipe-cont">
+
+		</div>
+	</div>
+</section>
+
+<script>
+	$(document).ready(function () {
+		$.ajax({
+			type: "GET",
+			url: "get_recipe.php",
+			dataType: "html",
+			success: function (response) {
+				$("#recipe-cont").html(response);
+			}
+
+		});
+	});
+</script>
+
+
+<!--add recipe-->
+<div class="heading text-center">
+	<img class="dividerline" src="img/sep.png" alt="">
+	<h2>Add Food</h2>
+	<img class="dividerline" src="img/sep.png" alt="">
+
+</div>
+<section class="contact" id="contact">
+	<div class="container w960">
+		<div class="row center-block">
+			<div class="done">
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">×</button> Your recipe has been added. Thank you!
+				</div>
+			</div>
+			<form style="text-align: center;" id="recipe-form">
+<div class="row center-block">
+	<input name="name" type="text" class="contact col-md-6" placeholder="Recipe Name *">
+	<select name="type" style="padding: 20px 60px;" class="selectpicker">
+<option value="0">APPETIZERS</option>
+<option value="1">MAIN</option>
+<option value="2">DESSERTS</option>
+</select>
+</div>
+<div class="row center-block">
+	<br/>
+	<textarea name="description" class="contact col-md-12" placeholder="Description *"></textarea>
+</div>
+<div class="row center-block">
+	<label for="fileToUpload">Upload Recipe Image</label>
+	<input type="file" class="contact col-md-12" name="image" id="fileToUpload">
+</div>
+<input type="submit" id="add-recipe-btn" class="contact submit" value="Add Recipe">
+</form>
+</div>
+</div>
+</section>
+
+
+<script>
+	$("#recipe-form").submit(function () {
+		$.ajax({
+			type: "POST",
+			url: "add_recipe.php",
+			data: new FormData(this),
+			processData: false,
+			contentType: false,
+			success: function (data) { alert(data); },
+		})
+	});
+</script>
+
+
+<!--gallery-->
+<section class="gallery" id="gallery">
+	<div class="container">
+		<div class="heading text-center">
+			<img class="dividerline" src="img/sep.png" alt="">
+			<h2>Events Gallery</h2>
+			<img class="dividerline" src="img/sep.png" alt="">
+		</div>
+
+		<div id="grid-gallery" class="grid-gallery" >
+
+
+		</div>
+		<!-- // grid-gallery -->
+	</div>
+</section>
+
+
+<script>
+	$(document).ready(function () {
+		$.ajax({
+			type: "GET",
+			url: "get_event.php",
+			dataType: "html",
+			success: function (response) {
+				$("#grid-gallery").html(response);
+			}
+
+		});
+	});
+</script>
+
+<!--add image to gallery-->
+<div class="heading text-center">
+	<img class="dividerline" src="img/sep.png" alt="">
+	<h2>Add Event</h2>
+	<img class="dividerline" src="img/sep.png" alt="">
+
+</div>
+<section class="contact" id="contact">
+	<div class="container w960">
+		<div class="row center-block">
+			<div class="done">
+				<div class="alert alert-success">
+					<button type="button" class="close" data-dismiss="alert">×</button> Your image has been added. Thank you!
+				</div>
+			</div>
+			<form style="text-align: center;" id="event-form">
+<div class="row center-block">
+	<input name="name" class="contact col-md-5" type="text" placeholder="Event Name *">
+	<input type="date" class="contact col-md-5 pull-right" style="margin-right: 0;" name="date_event" id="fileToUpload">
+</div>
+<div class="row center-block">
+	<br/>
+	<textarea name="description" class="contact col-md-12" placeholder="About Event *"></textarea>
+</div>
+<div class="row center-block">
+	<label for="fileToUpload">Upload Event Image</label>
+	<input type="file" class="contact col-md-12" name="image" id="fileToUpload">
+</div>
+<input type="submit" class="contact submit" value="Add Event">
+</form>
+</div>
+</div>
+</section>
+
+<script>
+	$("#event-form").submit(function () {
+		$.ajax({
+			type: "POST",
+			url: "add_event.php",
+			data: new FormData(this),
+			processData: false,
+			contentType: false,
+			success: function (data) { alert(data); },
+		})
+	});
+</script>
+
+<!--footer-->
+<section class="footer" id="footer">
+	<p class="text-center">
+		<a href="#wrapper" class="gototop"><i class="fa fa-angle-double-up fa-2x"></i></a>
+	</p>
+	<div class="container">
+		<ul>
+
+		</ul>
+	</div>
+</section>
+
+</div>
+<!--wrapper end-->
+
+<!--Javascripts-->
+<script src="js/jquery.js"></script>
+<script src="js/modernizr.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/menustick.js"></script>
+<script src="js/parallax.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/masonry.js"></script>
+<script src="js/imgloaded.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/colorfinder.js"></script>
+<script src="js/gridscroll.js"></script>
+<script src="js/contact.js"></script>
+<script src="js/common.js"></script>
+
+<script type="text/javascript">
+	jQuery(function ($) {
+		$(document).ready(function () {
+			//enabling stickUp on the '.navbar-wrapper' class
+			$('.navbar-wrapper').stickUp({
+				parts: {
+					0: 'banner',
+					1: 'aboutus',
+					2: 'specialties',
+					3: 'gallery',
+					4: 'feedback',
+					5: 'contact'
+				},
+				itemClass: 'menuItem',
+				itemHover: 'active',
+				topMargin: 'auto'
+			});
+		});
+	});
+</script>
+</body>
+
+</html>
